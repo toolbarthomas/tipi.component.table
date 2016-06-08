@@ -1,0 +1,31 @@
+$table: (
+	'table',
+	'.table'
+) !default;
+
+$table-column-horizontal-gutter: 	10px !default;
+$table-column-vertical-gutter: 		12px !default;
+$table-baseline:					1.31em !default;
+
+$table-border-style: 				solid !default;
+$table-border-width: 				2px !default;
+$table-border-color: 				$border-color !default;
+$table-border-inline: 				true !default;
+
+$table-outside-border: 				true !default;
+$table-outside-border-radius: 		5px !default;
+$table-inside-border-gap: 			false !default;
+
+$table-body-horizontal-border: 		true !default;
+$table-body-vertical-border: 		false !default;
+
+$table-head-horizontal-border: 		true !default;
+$table-head-vertical-border: 		false !default;
+
+$table-foot-horizontal-border: 		true !default;
+$table-foot-vertical-border: 		false !default;
+
+$table-line-height:					1.6em !default;
+
+$table-zebra:						true !default;
+$table-zebra-color:					$body-color-alt !default;

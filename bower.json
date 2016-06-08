@@ -1,0 +1,15 @@
+{
+  "name": "tipi.component.table",
+  "homepage": "https://github.com/toolbarthomas/tipi.component.table",
+  "authors": [
+    "Thomas van der Velde <contact@toolbarthomas.net>"
+  ],
+  "description": "Typography for Tipi",
+  "keywords": [
+    "toolbarthomas",
+    "modular",
+    "table"
+  ],
+  "license": "MIT",
+  "main": "_tipi.component.table.scss"
+}
