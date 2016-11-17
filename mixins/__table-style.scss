@@ -1,0 +1,314 @@
+@mixin table-style(
+	$selector: null,
+	$border-top-left-radius: false,
+	$border-top-right-radius: false,
+	$border-bottom-right-radius: false,
+	$border-bottom-left-radius: false,
+	$table-border: false,
+	$thead-horizontal-border: false,
+	$thead-vertical-border: false,
+	$thead-background: false,
+	$thead-color: false,
+	$thead-horizontal-gutter: false,
+	$thead-vertical-gutter: false,
+	$tfoot-background: false,
+	$tfoot-color: false,
+	$tfoot-horizontal-gutter: false,
+	$tfoot-vertical-gutter: false,
+	$tfoot-horizontal-border: false,
+	$tfoot-vertical-border: false,
+	$tbody-background: false,
+	$tbody-background-zebra: false,
+	$tbody-color: false,
+	$tbody-horizontal-gutter: false,
+	$tbody-vertical-gutter: false,
+	$tbody-horizontal-border: false,
+	$tbody-vertical-border: false
+) {
+	#{$table} {
+		&#{$selector} {
+			@if $table-border != false {
+				> tr,
+				> thead > tr,
+				> tbody:only-child > tr {
+					&:first-child {
+						> th,
+						> td {
+							border-top: $table-border;
+						}
+					}
+				}
+
+				> tr,
+				> tfoot > tr,
+				> thead + tbody > tr,
+				> tbody:only-child > tr {
+					&:last-child {
+						> th,
+						> td {
+							border-bottom: $table-border;
+						}
+					}
+				}
+
+				> tr,
+				> thead > tr,
+				> tfoot > tr ,
+				> tbody > tr {
+					> th,
+					> td {
+						&:first-child {
+							border-left: $table-border;
+						}
+
+						&:last-child {
+							border-right: $table-border;
+						}
+					}
+				}
+			}
+
+			@if $border-top-left-radius != false and $border-top-right-radius != false and $border-bottom-right-radius != false and $border-bottom-left-radius != false {
+				> tr,
+				> thead > tr,
+				> tbody:only-child > tr {
+					&:first-child {
+						> th,
+						> td {
+							@if $border-top-left-radius != false {
+								&:first-child {
+									border-top-left-radius: $border-top-left-radius;
+								}
+							}
+
+							@if $border-top-left-radius != false {
+								&:last-child {
+									border-top-right-radius: $border-top-right-radius;
+								}
+							}
+						}
+					}
+				}
+
+				> tr,
+				> tfoot > tr,
+				> thead + tbody > tr,
+				> tbody:only-child > tr {
+					&:last-child {
+						> th,
+						> td {
+							@if $border-top-left-radius != false {
+								&:first-child {
+									border-bottom-left-radius: $border-bottom-left-radius;
+								}
+							}
+
+							@if $border-top-left-radius != false {
+								&:last-child {
+									border-bottom-right-radius: $border-bottom-right-radius;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			> thead > tr {
+				> th,
+				> td {
+					@if $thead-horizontal-border != false {
+						border-bottom: $thead-horizontal-border;
+					}
+
+					@if $thead-vertical-border != false {
+						+ th,
+						+ td {
+							border-left: $thead-vertical-border;
+						}
+					}
+
+					@if $thead-background != false {
+						background: $thead-background;
+					}
+
+					@if $thead-color != false {
+						color: $thead-color;
+					}
+
+					@if	$thead-horizontal-gutter != false {
+						padding-right: $thead-horizontal-gutter / 2;
+						padding-left: $thead-horizontal-gutter / 2;
+
+						&:first-child {
+							padding-left: $thead-horizontal-gutter;
+						}
+
+						&:last-child {
+							padding-right: $thead-horizontal-gutter;
+						}
+					}
+				}
+
+				@if	$thead-vertical-gutter != false {
+					&:first-child {
+						> th,
+						> td {
+							padding-top: $thead-vertical-gutter;
+						}
+					}
+
+					&:last-child {
+						> th,
+						> td {
+							padding-bottom: $thead-vertical-gutter;
+						}
+					}
+
+					> th,
+					> td {
+						padding-top: $thead-vertical-gutter / 2;
+						padding-bottom: $thead-vertical-gutter / 2;
+					}
+				}
+			}
+
+			> tfoot > tr {
+				> th,
+				> td {
+					@if $thead-vertical-border != false {
+						+ th,
+						+ td {
+							border-left: $thead-vertical-border;
+						}
+					}
+
+					@if $tfoot-background != false {
+						background: $tfoot-background;
+					}
+
+					@if $tfoot-color != false {
+						color: $tfoot-color;
+					}
+
+					@if	$tfoot-horizontal-gutter != false {
+						padding-right: $tfoot-horizontal-gutter / 2;
+						padding-left: $tfoot-horizontal-gutter / 2;
+
+						&:first-child {
+							padding-left: $tfoot-horizontal-gutter;
+						}
+
+						&:last-child {
+							padding-right: $tfoot-horizontal-gutter;
+						}
+					}
+				}
+
+				@if $thead-horizontal-border != false {
+					&:first-child {
+						> th,
+						> td {
+							border-top: $thead-horizontal-border;
+						}
+					}
+				}
+
+				@if	$tfoot-vertical-gutter != false {
+					&:first-child {
+						> th,
+						> td {
+							padding-top: $tfoot-vertical-gutter;
+						}
+					}
+
+					&:last-child {
+						> th,
+						> td {
+							padding-bottom: $tfoot-vertical-gutter;
+						}
+					}
+
+					> th,
+					> td {
+						padding-top: $tfoot-vertical-gutter / 2;
+						padding-bottom: $tfoot-vertical-gutter / 2;
+					}
+				}
+			}
+
+			> tr,
+			> tbody > tr {
+				> th,
+				> td {
+					@if $tbody-vertical-border != false {
+						+ th,
+						+ td {
+							border-left: $tbody-vertical-border;
+						}
+					}
+
+					@if	$tbody-background != false {
+						background: $tbody-background;
+					}
+
+					@if	$tbody-color != false {
+						color: $tbody-color;
+					}
+
+					@if	$tbody-horizontal-gutter != false {
+						padding-right: $tbody-horizontal-gutter / 2;
+						padding-left: $tbody-horizontal-gutter / 2;
+
+						&:first-child {
+							padding-left: $tbody-horizontal-gutter;
+						}
+
+						&:last-child {
+							padding-right: $tbody-horizontal-gutter;
+						}
+					}
+				}
+
+				@if $tbody-horizontal-border != false {
+					+ tr {
+						> th,
+						> td {
+							border-top: $tbody-horizontal-border;
+						}
+					}
+				}
+
+				@if	$tbody-vertical-gutter != false {
+					&:first-child {
+						> th,
+						> td {
+							padding-top: $tbody-vertical-gutter;
+						}
+					}
+
+					&:last-child {
+						> th,
+						> td {
+							padding-bottom: $tbody-vertical-gutter;
+						}
+					}
+
+					> th,
+					> td {
+						padding-top: $tbody-vertical-gutter / 2;
+						padding-bottom: $tbody-vertical-gutter / 2;
+					}
+				}
+
+				@if $tbody-background-zebra != false {
+					&:nth-child(even) {
+						> th,
+						> td {
+							background-color: $tbody-background-zebra;
+						}
+					}
+				}
+			}
+		}
+	}
+}
