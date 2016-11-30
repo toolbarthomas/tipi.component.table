@@ -21,9 +21,7 @@
 	$tbody-background-zebra: false,
 	$tbody-color: false,
 	$tbody-horizontal-gutter: false,
-	$tbody-vertical-gutter: false,
-	$tbody-horizontal-border: false,
-	$tbody-vertical-border: false
+	$tbody-vertical-gutter: false
 ) {
 	#{$table} {
 		&#{$selector} {
@@ -208,7 +206,7 @@
 					&:first-child {
 						> th,
 						> td {
-							border-top: $thead-horizontal-border;
+							border-top: $tfoot-horizontal-border;
 						}
 					}
 				}
