@@ -202,7 +202,7 @@
 					}
 				}
 
-				@if $thead-horizontal-border != false {
+				@if $tfoot-horizontal-border != false {
 					&:first-child {
 						> th,
 						> td {
