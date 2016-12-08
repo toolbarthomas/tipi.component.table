@@ -5,6 +5,9 @@
 	$border-bottom-right-radius: false,
 	$border-bottom-left-radius: false,
 	$table-border: false,
+	$table-border-thead-color: false,
+	$table-border-tfoot-color: false,
+	$table-border-tbody-color: false,
 	$thead-horizontal-border: false,
 	$thead-vertical-border: false,
 	$thead-background: false,
@@ -63,6 +66,70 @@
 
 						&:last-child {
 							border-right: $table-border;
+						}
+					}
+				}
+
+
+				@if $table-border-thead-color != false {
+					> thead > tr {
+						&:first-child {
+							> th,
+							> td {
+								border-top-color: $table-border-thead-color;
+							}
+						}
+
+						> th,
+						> td {
+							&:first-child {
+								border-left-color: $table-border-thead-color;
+							}
+
+							&:last-child {
+								border-right-color: $table-border-thead-color;
+							}
+						}
+					}
+				}
+
+
+				@if $table-border-tfoot-color != false {
+					> tfoot > tr,
+					> thead + tbody > tr,
+					> tbody:only-child > tr {
+						&:last-child {
+							> th,
+							> td {
+								border-bottom-color: $table-border-tfoot-color;
+							}
+						}
+
+						> th,
+						> td {
+							&:first-child {
+								border-left-color: $table-border-tfoot-color;
+							}
+
+							&:last-child {
+								border-right-color: $table-border-tfoot-color;
+							}
+						}
+					}
+				}
+
+				@if $table-border-tbody-color != false {
+					> tr,
+					> tbody > tr {
+						> th,
+						> td {
+							&:first-child {
+								border-left-color: $table-border-tbody-color;
+							}
+
+							&:last-child {
+								border-right-color: $table-border-tbody-color;
+							}
 						}
 					}
 				}
