@@ -203,8 +203,14 @@
 					}
 
 					@if	$thead-horizontal-gutter != false {
-						padding-right: $thead-horizontal-gutter / 2;
-						padding-left: $thead-horizontal-gutter / 2;
+						@if	$thead-horizontal-border != false {
+							padding-right: $thead-horizontal-gutter;
+							padding-left: $thead-horizontal-gutter;
+						}
+						@else {
+							padding-right: $thead-horizontal-gutter / 2;
+							padding-left: $thead-horizontal-gutter / 2;
+						}
 
 						&:first-child {
 							padding-left: $thead-horizontal-gutter;
@@ -233,8 +239,14 @@
 
 					> th,
 					> td {
-						padding-top: $thead-vertical-gutter / 2;
-						padding-bottom: $thead-vertical-gutter / 2;
+						@if	$thead-vertical-border != false {
+							padding-top: $thead-vertical-gutter;
+							padding-bottom: $thead-vertical-gutter;
+						}
+						@else {
+							padding-top: $thead-vertical-gutter / 2;
+							padding-bottom: $thead-vertical-gutter / 2;
+						}
 					}
 				}
 			}
@@ -258,8 +270,14 @@
 					}
 
 					@if	$tfoot-horizontal-gutter != false {
-						padding-right: $tfoot-horizontal-gutter / 2;
-						padding-left: $tfoot-horizontal-gutter / 2;
+						@if	$tfoot-horizontal-border != false {
+							padding-right: $tfoot-horizontal-gutter;
+							padding-left: $tfoot-horizontal-gutter;
+						}
+						@else {
+							padding-right: $tfoot-horizontal-gutter / 2;
+							padding-left: $tfoot-horizontal-gutter / 2;
+						}
 
 						&:first-child {
 							padding-left: $tfoot-horizontal-gutter;
@@ -297,8 +315,14 @@
 
 					> th,
 					> td {
-						padding-top: $tfoot-vertical-gutter / 2;
-						padding-bottom: $tfoot-vertical-gutter / 2;
+						@if	$tfoot-vertical-border != false {
+							padding-top: $tfoot-vertical-gutter;
+							padding-bottom: $tfoot-vertical-gutter;
+						}
+						@else {
+							padding-top: $tfoot-vertical-gutter / 2;
+							padding-bottom: $tfoot-vertical-gutter / 2;
+						}
 					}
 				}
 			}
@@ -323,8 +347,14 @@
 					}
 
 					@if	$tbody-horizontal-gutter != false {
-						padding-right: $tbody-horizontal-gutter / 2;
-						padding-left: $tbody-horizontal-gutter / 2;
+						@if	$tbody-horizontal-border != false {
+							padding-right: $tbody-horizontal-gutter;
+							padding-left: $tbody-horizontal-gutter;
+						}
+						@else {
+							padding-right: $tbody-horizontal-gutter / 2;
+							padding-left: $tbody-horizontal-gutter / 2;
+						}
 
 						&:first-child {
 							padding-left: $tbody-horizontal-gutter;
@@ -346,6 +376,18 @@
 				}
 
 				@if	$tbody-vertical-gutter != false {
+					> th,
+					> td {
+						@if	$tbody-vertical-border != false {
+							padding-top: $tbody-vertical-gutter;
+							padding-bottom: $tbody-vertical-gutter;
+						}
+						@else {
+							padding-top: $tbody-vertical-gutter / 2;
+							padding-bottom: $tbody-vertical-gutter / 2;
+						}
+					}
+
 					&:first-child {
 						> th,
 						> td {
@@ -358,12 +400,6 @@
 						> td {
 							padding-bottom: $tbody-vertical-gutter;
 						}
-					}
-
-					> th,
-					> td {
-						padding-top: $tbody-vertical-gutter / 2;
-						padding-bottom: $tbody-vertical-gutter / 2;
 					}
 				}
 
