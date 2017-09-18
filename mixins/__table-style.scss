@@ -254,10 +254,10 @@
 			> tfoot > tr {
 				> th,
 				> td {
-					@if $thead-vertical-border != false {
+					@if $tfoot-horizontal-border != false {
 						+ th,
 						+ td {
-							border-left: $thead-vertical-border;
+							border-left: $tfoot-horizontal-border;
 						}
 					}
 
